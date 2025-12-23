@@ -1,0 +1,26 @@
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int right=nums.length-1;
+        for(int i=1;i<nums.length;i++)
+        {
+            nums[i]=nums[i-1]+nums[i];
+        }
+        if(nums[right]-nums[0]==0)
+        {
+            return 0;
+        }
+        else
+        {
+            for(int i=1;i<nums.length-1;i++)
+            {
+                if(nums[i-1]==nums[right]-nums[i])
+                    return i;
+            }
+        }
+        if (nums[right-1]==0)
+        {
+            return right;
+        }
+        return -1;
+    }
+}
