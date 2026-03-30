@@ -2,7 +2,7 @@ class Solution {
     public int strStr(String haystack, String needle) {
         int n=needle.length();
         int len=haystack.length();
-        for(int i=0;i<len-n;i++){
+        for(int i=0;i<=len-n;i++){
             int l=i,r=i+n;
             if(needle.equals(haystack.substring(l,r))) return i;
         }
